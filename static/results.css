@@ -1,0 +1,63 @@
+#general-info {
+	width: 100%;
+	margin: 0 auto;
+	table-layout: fixed;
+}
+
+#general-info td {
+	padding: 5px;
+}
+
+#general-info td:first-child {
+	text-align: right;
+	padding-right: 20px;
+}
+
+#general-info td:last-child {
+	text-align: left;
+	padding-left: 20px;
+}
+
+#general-info tr {
+	background-color: #A9927D;
+}
+
+#general-info tr:nth-child(even) {
+	background-color: #B8A594;
+}
+
+#pages a {
+	display: block;
+	color: #F2F4F3;
+	background-color: #195071;
+	transition: 0.15s;
+	margin: 5px auto;
+	padding: 5px;
+	width: 75%;
+	text-decoration: none;
+}
+
+#pages a:hover {
+	background-color: #30617F;
+}
+
+.color-container {
+	width: 75%;
+	margin: 0 auto;
+	font-size: 0;
+}
+
+.color-container div {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	margin: 1px;
+	border: 1px solid #0A0908;
+}
+
+#chart {
+	margin-top: 30px;
+	border-radius: 5px;
+	border: 1px solid #0A0908;
+	overflow: hidden;
+}
