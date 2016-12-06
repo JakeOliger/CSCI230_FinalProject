@@ -80,6 +80,14 @@
 								'complete': function(response, status) {
 									response = response.responseJSON;
 
+									if (response['success'] == false) {
+										$('#spinner-container').slideUp();
+										$('#website').slideDown();
+										$('#hint').text('Invalid address').slideDown();
+										oneFinished = false;
+										return;
+									}
+
 									serverTimeAtRequestReceived = response['current_time'];
 
 									var intervalId = setInterval(function() {

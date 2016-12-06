@@ -4,7 +4,7 @@ conn = sqlite3.connect('scraper.db')
 
 c = conn.cursor()
 
-createNewDatabase = False
+createNewDatabase = True
 
 if createNewDatabase:
 	c.execute('''CREATE TABLE sites

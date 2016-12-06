@@ -83,6 +83,7 @@ class Page:
 			self.broken = False
 			return
 
+
 		if 'lang' in soup.html.attrs:
 			self.lang = soup.html.attrs['lang']
 
@@ -109,7 +110,7 @@ class Page:
 
 		# Get the colors
 		self.getColors(soup)
-
+		
 		# Get the word metricsy stuff
 		self.getWordMetrics(soup)
 
@@ -143,8 +144,13 @@ class Page:
 					else:
 						# Handle relative paths
 						requestPath = self.parent.url + self.path + i.attrs['href']
-				styleReq = requests.get(requestPath)
-				stylesheets.append(str(styleReq.content))
+				styleReq = None
+				try:
+					styleReq = requests.get(requestPath, timeout=3)
+				except requests.exceptions.Timeout as e:
+					print(e)
+				if styleReq:
+					stylesheets.append(str(styleReq.content))
 
 		# Find the colors by singling out each rule in the CSS files
 		fontColors = []
